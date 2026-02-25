@@ -1,10 +1,17 @@
 ---
-title: WRITER PDF Parser
+title: "Writer PDF parser parsers integration"
+description: "Integrate with the Writer PDF parser parsers document loader using LangChain Python."
 ---
 
 This guide provides a quick overview for getting started with the WRITER `PDFParser` [document loader](/oss/python/integrations/document_loaders/).
 
 WRITER's [PDF Parser](https://dev.writer.com/api-guides/api-reference/tool-api/pdf-parser#parse-pdf) converts PDF documents into other formats like text or Markdown. This is particularly useful when you need to extract and process text content from PDF files for further analysis or integration into your workflow. In `langchain-writer`, we provide usage of WRITER's PDF Parser as a LangChain document parser.
+
+<Warning>
+**Deprecation notice**: The parse PDF tool is deprecated and will be removed on **December 22, 2025**.
+
+**Migration path**: We plan to introduce a prebuilt PDF parsing tool for chat completions that will provide similar functionality. This tool will work similarly to other prebuilt tools. We will provide more details about this alternative when it becomes available.
+</Warning>
 
 ## Overview
 
@@ -53,7 +60,7 @@ parser = PDFParser(format="markdown")
 
 ## Usage
 
-There are two ways to use the PDF Parser, either synchronously or asynchronously. In either case, the PDF Parser will return a list of [`Document`](https://reference.langchain.com/python/langchain_core/documents/#langchain_core.documents.base.Document) objects, each containing the parsed content of a page from the PDF file.
+There are two ways to use the PDF Parser, either synchronously or asynchronously. In either case, the PDF Parser will return a list of [`Document`](https://reference.langchain.com/python/langchain-core/documents/base/Document) objects, each containing the parsed content of a page from the PDF file.
 
 ### Synchronous usage
 
@@ -77,6 +84,8 @@ parsed_pages_async = await parser.aparse(blob=file)
 parsed_pages_async
 ```
 
+---
+
 ## API reference
 
 For detailed documentation of all `PDFParser` features and configurations, head to the [API reference](https://python.langchain.com/api_reference/writer/pdf_parser/langchain_writer.pdf_parser.PDFParser.html#langchain_writer.pdf_parser.PDFParser).
@@ -87,9 +96,9 @@ You can find information about WRITER's models (including costs, context windows
 
 ---
 
-<Callout icon="pen-to-square" iconType="regular">
-    [Edit the source of this page on GitHub.](https://github.com/langchain-ai/docs/edit/main/src/oss/python/integrations/document_loaders/parsers/writer_pdf_parser.mdx)
+<Callout icon="edit">
+    [Edit this page on GitHub](https://github.com/langchain-ai/docs/edit/main/src/oss/python/integrations/document_loaders/parsers/writer_pdf_parser.mdx) or [file an issue](https://github.com/langchain-ai/docs/issues/new/choose).
 </Callout>
-<Tip icon="terminal" iconType="regular">
-    [Connect these docs programmatically](/use-these-docs) to Claude, VSCode, and more via MCP for    real-time answers.
-</Tip>
+<Callout icon="terminal-2">
+    [Connect these docs](/use-these-docs) to Claude, VSCode, and more via MCP for real-time answers.
+</Callout>

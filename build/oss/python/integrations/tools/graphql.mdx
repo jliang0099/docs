@@ -1,5 +1,6 @@
 ---
-title: GraphQL
+title: "GraphQL integration"
+description: "Integrate with the GraphQL tool using LangChain Python."
 ---
 
 >[GraphQL](https://graphql.org/) is a query language for APIs and a runtime for executing those queries against your data. `GraphQL` provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
@@ -16,16 +17,8 @@ First, you need to install `httpx` and `gql` Python packages.
 pip install httpx gql > /dev/null
 ```
 
-```output
-Note: you may need to restart the kernel to use updated packages.
-```
-
 ```python
 pip install -qU  langchain-community
-```
-
-```output
-Note: you may need to restart the kernel to use updated packages.
 ```
 
 Now, let's create a BaseGraphQLTool instance with the specified Star Wars API endpoint and initialize an Agent with the tool.
@@ -49,7 +42,7 @@ tools = load_tools(
 from langchain.agents import create_agent
 
 
-agent = create_agent("openai:gpt-4.1-mini", tools)
+agent = create_agent("gpt-4.1-mini", tools)
 ```
 
 Now, we can use the Agent to run queries against the Star Wars GraphQL API. Let's ask the Agent to list all the Star Wars films and their release dates.
@@ -88,7 +81,7 @@ for step in agent.stream(
     step["messages"][-1].pretty_print()
 ```
 
-```output
+```text
 ================================ Human Message =================================
 
 Search for the titles of all the stawars films stored in the graphql database that has this schema allFilms {
@@ -138,9 +131,9 @@ If you would like more information about any of these films, please let me know!
 
 ---
 
-<Callout icon="pen-to-square" iconType="regular">
-    [Edit the source of this page on GitHub.](https://github.com/langchain-ai/docs/edit/main/src/oss/python/integrations/tools/graphql.mdx)
+<Callout icon="edit">
+    [Edit this page on GitHub](https://github.com/langchain-ai/docs/edit/main/src/oss/python/integrations/tools/graphql.mdx) or [file an issue](https://github.com/langchain-ai/docs/issues/new/choose).
 </Callout>
-<Tip icon="terminal" iconType="regular">
-    [Connect these docs programmatically](/use-these-docs) to Claude, VSCode, and more via MCP for    real-time answers.
-</Tip>
+<Callout icon="terminal-2">
+    [Connect these docs](/use-these-docs) to Claude, VSCode, and more via MCP for real-time answers.
+</Callout>

@@ -1,5 +1,6 @@
 ---
-title: Konko
+title: "Konko integration"
+description: "Integrate with the Konko LLM using LangChain Python."
 ---
 
 
@@ -14,11 +15,11 @@ This example goes over how to use LangChain to interact with `Konko` completion 
 
 To run this notebook, you'll need Konko API key. Sign in to our web app to [create an API key](https://platform.konko.ai/settings/api-keys) to access models
 
-#### Set Environment Variables
+#### Set environment variables
 
 1. You can set environment variables for
-   1. KONKO_API_KEY (Required)
-   2. OPENAI_API_KEY (Optional)
+    1. KONKO_API_KEY (Required)
+    2. OPENAI_API_KEY (Optional)
 2. In your current shell session, use the export command:
 
 ```shell
@@ -43,7 +44,7 @@ input_ = """You are a helpful assistant. Explain Big Bang Theory briefly."""
 print(llm.invoke(input_))
 ```
 
-```output
+```text
 Answer:
 The Big Bang Theory is a theory that explains the origin of the universe. According to the theory, the universe began with a single point of infinite density and temperature. This point is called the singularity. The singularity exploded and expanded rapidly. The expansion of the universe is still continuing.
 The Big Bang Theory is a theory that explains the origin of the universe. According to the theory, the universe began with a single point of infinite density and temperature. This point is called the singularity. The singularity exploded and expanded rapidly. The expansion of the universe is still continuing.
@@ -53,9 +54,9 @@ Question
 
 ---
 
-<Callout icon="pen-to-square" iconType="regular">
-    [Edit the source of this page on GitHub.](https://github.com/langchain-ai/docs/edit/main/src/oss/python/integrations/llms/konko.mdx)
+<Callout icon="edit">
+    [Edit this page on GitHub](https://github.com/langchain-ai/docs/edit/main/src/oss/python/integrations/llms/konko.mdx) or [file an issue](https://github.com/langchain-ai/docs/issues/new/choose).
 </Callout>
-<Tip icon="terminal" iconType="regular">
-    [Connect these docs programmatically](/use-these-docs) to Claude, VSCode, and more via MCP for    real-time answers.
-</Tip>
+<Callout icon="terminal-2">
+    [Connect these docs](/use-these-docs) to Claude, VSCode, and more via MCP for real-time answers.
+</Callout>
